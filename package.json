@@ -1,20 +1,24 @@
 {
-  "name": "well-named-in",
-  "version": "1.0.0",
-  "description": "JS Assignment Repository",
-  "main": "colorCoder.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app/colorCoder.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/clean-s-1/well-named-in-js.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/clean-s-1/well-named-in-js/issues"
-  },
-  "homepage": "https://github.com/clean-s-1/well-named-in-js#readme"
+	"name": "well-named-in",
+	"version": "1.0.0",
+	"description": "JS Assignment Repository",
+	"main": "testColorPair.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app/testColorPair.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/clean-s-1/well-named-in-js.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/clean-s-1/well-named-in-js/issues"
+	},
+	"homepage": "https://github.com/clean-s-1/well-named-in-js#readme",
+	"dependencies": {
+		"prompt-sync": "^4.2.0"
+	},
+	"type": "module"
 }
