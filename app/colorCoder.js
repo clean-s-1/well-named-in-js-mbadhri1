@@ -1,7 +1,7 @@
 import { MajorColorNames, MinorColorNames } from './colorNames.js';
 import ColorPair from './ColorPair.js';
 
-/** This function receives color number and returns the color pair for identify wires in telecommunications cables
+/** This function receives color number and returns the color pair. Pair number should not be less than 1 and greater than multiple of major indexes and minor indexes
  * @param pairNumber
  * @returns Color Pair
  */
@@ -25,23 +25,21 @@ function getColorFromPairNumber(pairNumber) {
  * @returns pairNumber
  */
 function getPairNumberFromColor(pair) {
-	let majorIndex = -1;
-	for (let i = 0; i < MajorColorNames.length; i++) {
-		if (MajorColorNames[i] == pair.majorColor) {
-			majorIndex = i;
-			break;
-		}
-	}
-	let minorIndex = -1;
-	for (let i = 0; i < MinorColorNames.length; i++) {
-		if (MinorColorNames[i] == pair.minorColor) {
-			minorIndex = i;
-			break;
-		}
-	}
+	let majorIndex = findColorMatchingIndex(MajorColorNames, pair.majorColor);
+	let minorIndex = findColorMatchingIndex(MinorColorNames, pair.minorColor);
 	if (majorIndex == -1 || minorIndex == -1) {
 		throw `Unknown Colors:${pair.toString()}`;
 	}
 	return majorIndex * MinorColorNames.length + (minorIndex + 1);
+}
+function findColorMatchingIndex(colorNames, color) {
+	let startIndex = -1;
+	for (let i = 0; i < colorNames.length; i++) {
+		if (colorNames[i] == color) {
+			startIndex = i;
+			break;
+		}
+	}
+	return startIndex;
 }
 export { getColorFromPairNumber, getPairNumberFromColor };
